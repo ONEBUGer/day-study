@@ -1,18 +1,25 @@
 package cn.day.test;
 
 import cn.day.test.dto.User;
+import cn.day.test.elasticsearch.dto.TestDTO;
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.github.benmanes.caffeine.cache.AsyncLoadingCache;
 import com.github.benmanes.caffeine.cache.Cache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.github.benmanes.caffeine.cache.LoadingCache;
+import com.google.common.base.Joiner;
 import org.junit.jupiter.api.Test;
 
+import java.io.FileReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -103,9 +110,97 @@ public class DayTest {
 //        Cache<Object, Object> build = Caffeine.newBuilder().build();
 
 
-        String x = "-2323.44";
-        double v = Double.parseDouble(x);
-        System.out.println(v);
+//        String x = "-2323.44";
+//        double v = Double.parseDouble(x);
+//        System.out.println(v);
+
+//        String fileName = "D:\\fileTest";
+//        //读取方式1
+//        FileReader fileReader = new FileReader(fileName);
+//        Scanner scanner = new Scanner(fileReader);
+        //读取方式2
+//        Path path = Paths.get(fileName);
+//        Stream<String> lines = Files.lines(path);
+        //读取方式3
+
+//        Double test = 3.2344324;
+//        System.out.println(test / 1000);
+
+//        HashSet<Integer> hashSet = new HashSet<>();
+//        hashSet.add(1);
+//        hashSet.add(2);
+//
+//        ArrayList<Integer> list = new ArrayList<>(hashSet);
+//        System.out.println(list);
+//
+//        Base64.Encoder encoder = Base64.getEncoder();
+//
+//        HttpRequest head = HttpRequest.head("http://www.baidu.com");
+//        head.basicAuth("id", "password");
+
+//        String str = "true";
+//        if (str.equals(true)){
+//            System.out.println("111");
+//        }
+
+//        TestDTO testDTO = new TestDTO();
+//        testDTO.setCheck(true);
+//
+//        JSONObject jsonObject = JSONObject.parseObject(JSONObject.toJSONString(testDTO));
+//        String check = jsonObject.getString("check");
+//        System.out.println(check);
+//
+//        if (check.equals("true")){
+//            System.out.println("111");
+//        }
+
+//        TestDTO testDTO = new TestDTO();
+//        testDTO.setCheck(true);
+//        testDTO.setGroupId(1);
+//        TestDTO dto = new TestDTO();
+//        dto.setGroupId(1);
+//        dto.setCheck(false);
+//        TestDTO test = new TestDTO();
+//        test.setCheck(false);
+//        test.setGroupId(2);
+//
+//        ArrayList<TestDTO> testDTOS = new ArrayList<>();
+//        testDTOS.add(test);
+//        testDTOS.add(testDTO);
+//        testDTOS.add(dto);
+//
+//        HashMap<Integer, List<TestDTO>> map = new HashMap<>();
+//        for (TestDTO testDTO1 : testDTOS) {
+//            map.computeIfAbsent(testDTO1.getGroupId(), k -> new ArrayList<>()).add(testDTO1);
+//        }
+//        System.out.println(map);
+
+//        //密码校验是否季度更新提示
+//        Boolean checkPasswordUpdate = false;
+//        Date date = new Date();
+//        String str = "2023-01-10 16:09:43";
+//        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//        Date parse = simpleDateFormat.parse(str);
+//        if ((System.currentTimeMillis() - parse.getTime()) > 90 * 24 * 60 * 60 * 1000L){
+//            checkPasswordUpdate = true;
+//        }
+//        long i = 1839838;
+//
+//        System.out.println(checkPasswordUpdate);
+
+//        String str = "null";
+//        String[] split = str.split(",");
+//        System.out.println(split.length);
+
+//        List<Integer> list = Arrays.asList(1, 2, 3);
+//        List<Integer> list1 = list.subList(0, 2);
+//        String join = Joiner.on(",").join(list1);
+//        System.out.println(join);
+
+//
+        String ip = "192.168.25.31";
+        String[] split = ip.split("\\.");
+        System.out.println(Arrays.asList(split));
     }
 
     public static String slowMethod(String key) throws InterruptedException {

@@ -1,6 +1,7 @@
 package cn.day.test.dto;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * @author ZhengChangBing
@@ -8,11 +9,22 @@ import lombok.Data;
  * @Description 用户实体类
  */
 @Data
+@Accessors(chain = true)
 public class User {
 
     private Integer id;
 
     private String name;
+
+    public String getHobby() {
+        return hobby;
+    }
+
+    public void setHobby(String hobby) {
+        this.hobby = hobby;
+    }
+
+    private transient String hobby;
 
     public User(String name) {
         this.name = name;
